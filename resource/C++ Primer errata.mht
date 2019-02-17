@@ -1,0 +1,116 @@
+From: =?utf-8?Q?=E5=B7=B2=E7=94=B1_Internet_Explorer_11_=E4=BF=9D=E5=AD=98?=
+Subject: C++ Primer errata
+Date: Sat, 17 Nov 2018 14:52:49 +0800
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://ptgmedia.pearsoncmg.com/images/9780321714114/errata/9780321714114_errata_10-31-12.html
+X-MimeOLE: Produced By Microsoft MimeOLE
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" =
+""><HTML><HEAD><META=20
+content=3D"IE=3D5.0000" http-equiv=3D"X-UA-Compatible">
+<TITLE>C++ Primer errata</TITLE>=20
+<META http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dutf-8">=20
+<META name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001"></HEAD>=20
+<BODY bgcolor=3D"#f0f0f0">
+<H1> C++ Primer Errata</H1><EM>Last modified 9 October 2012</EM>=20
+<P>Every book has bugs in it, and  <CITE>C++ Primer</CITE> is no =
+exception.=20
+ This page presents all the bugs that have come to our attention. All of =
+these=20
+errors will be corrected in the  Second printing, October 2012. Many =
+thanks to=20
+the careful readers who notified us of these problems! </P>
+<H2>Technical errors corrected in the second printing</H2>
+<UL>
+  <LI>Page 475: The <TT>begin</TT> and <TT>end</TT> members of class=20
+  <TT>StrBlob</TT> should be defined outside the class body. They can't =
+be=20
+  defined until class <TT>StrBlobPtr</TT> is complete.=20
+  <LI>Page 522: The <TT>remove_from_Folders</TT> member correctly =
+removes=20
+  pointers to itself from each of its  corresponding <TT>Folder</TT>s, =
+but it=20
+  should <TT>clear</TT> its own <TT>folders</TT> member as well.=20
+  <LI>Pages 525=E2=80=93528: The <TT>alloc</TT> member of =
+<TT>StrVec</TT> should be a=20
+  static member of the class, not a data member of each object. To fix =
+this=20
+  error, add the <TT>static</TT> keyword to the declaration of =
+<TT>alloc</TT>
+   inside the <TT>StrVec</TT> class and provide a definition of the form =
+
+  <OL><TT>allocator&lt;string&gt; StrVec::alloc; </TT></OL>inside the=20
+  implementation file for <TT>StrVec</TT>.=20
+  <LI>Page 567: In the <TT>StrBlobPtr::operator--()</TT> function, the =
+call to=20
+  check should pass <TT>curr</TT> as the first argument, not =
+<TT>-1</TT>.=20
+  <LI>Page 762: The <TT>EOF</TT> preprocessor variable is defined in the =
+
+  <TT>cstdio</TT> header not <TT>iostream</TT>. </LI></UL>
+<H2>Clarifications and improvements made in the second printing</H2>
+<UL>
+  <LI>Page 175: The <TT>scores</TT> <TT>vector</TT> should be defined as =
+=20
+  <TT>const</TT> because we do not want the elements in <TT>scores</TT> =
+to be=20
+  changed.=20
+  <LI> Pages 576=E2=80=93578: The <TT>div</TT> class reuses the name of =
+a C library=20
+  function. C++ compilers are permitted to put C library names into the =
+global=20
+  namespace. To avoid potential conflicts  rename this class =
+<TT>divide</TT>.=20
+  <LI> Page 780: Drop  "are equivalent" from the last sentence of the=20
+  highlighted box titled <EM>Backward Compatibility: Exception=20
+  Specifications</EM>. These declarations both say that <TT>recoup</TT> =
+won't=20
+  throw, but there are subtle distinctions between what the compiler is=20
+  permitted to do with these declarations. </LI></UL>
+<H2>Typographical errors corrected in the second printing</H2>
+<UL>
+  <LI> Pages xxvi and 22 the correct web address for the book code is <A =
+href=3D"http://www.informit.com/title/0321714113">http://www.informit.com=
+/title/0321714113</A>=20
+  <LI> Page 155: The explanation of why we use an <TT>unsigned</TT>=20
+  <TT>long</TT> rather than an <TT>int</TT> should say that we need "at =
+least=20
+  27" bits, not that we need "at least 17" bits.=20
+  <LI>Page 158: The last sentence before the exercises for <TT>4.10</TT> =
+should=20
+  say that we  "reset the current element" not the "next element".=20
+  <LI>Page 177: The second comment in the first two code examples should =
+
+   include <TT>7</TT> as a grade that will get a minus.=20
+  <LI> Page 225: In the third sentence before the <I>Tip</I> box, should =
+read=20
+  "<TT>string</TT> named <TT>ret</TT>" not  "<TT>string</TT> named =
+<TT>s</TT>".=20
+  <LI>Page 229: The type alias declaration in the code example at the =
+top of the=20
+  page  should define <TT>arrT</TT> not <TT>arrtT</TT> and the last =
+comment in=20
+  that example should say that "<TT>func</TT> returns a pointer  to an =
+array of=20
+  ten <TT>int</TT>s" not five <TT>int</TT>s.=20
+  <LI> Page 236: Last sentence before the last code example should be  =
+"For=20
+  example, to override the default for <TT>backgrnd</TT>, we must also =
+supply=20
+  arguments for <TT>ht</TT> and <TT>wid</TT>:"=20
+  <LI>Page 243: Replace "parameter" at the end of the last bullet by =
+"argument=20
+  in the call". </LI></UL>
+<H2>Changes in exercises made in the second printing</H2>
+<UL>
+  <LI>Page 59: Exercise 2.25 (a) should be  <TT>int* ip, i, &amp;r =3D =
+i;</TT>=20
+  <LI> Page 228: Exercise 6.35 replace  "<TT>fact</TT>" by=20
+   "<TT>factorial</TT>".=20
+  <LI> Page 250: Exercise 6.55 change "values" to "functions".=20
+</LI></UL></BODY></HTML>
